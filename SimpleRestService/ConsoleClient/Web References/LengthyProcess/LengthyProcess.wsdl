@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:tns="http://LengthyProcess" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://LengthyProcess" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://LengthyProcess" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="LengthyProcessRequest">
+        <complexType>
+          <sequence>
+            <element name="input" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="LengthyProcessResponse">
+        <complexType>
+          <sequence>
+            <element name="result" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="LengthyProcessRequestMessage">
+    <wsdl:part name="payload" element="tns:LengthyProcessRequest" />
+  </wsdl:message>
+  <wsdl:message name="LengthyProcessResponseMessage">
+    <wsdl:part name="payload" element="tns:LengthyProcessResponse" />
+  </wsdl:message>
+  <wsdl:portType name="LengthyProcessPortType">
+    <wsdl:operation name="process">
+      <wsdl:input wsaw:Action="http://LengthyProcess/process" message="tns:LengthyProcessRequestMessage" />
+      <wsdl:output wsaw:Action="http://LengthyProcess/LengthyProcess/processResponse" message="tns:LengthyProcessResponseMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LengthyProcessBinding" type="tns:LengthyProcessPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="process">
+      <soap:operation soapAction="http://LengthyProcess/process" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LengthyProcess">
+    <wsdl:port name="LengthyProcessPort" binding="tns:LengthyProcessBinding">
+      <soap:address location="http://localhost:8080//LengthyProcess.LengthyProcessPort/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

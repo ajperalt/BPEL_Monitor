@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ConsoleClient.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ConsoleClient_SoapInvokerV2_SoapService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:28387/SoapService.svc</Value>
+    </Setting>
+    <Setting Name="ConsoleClient_SoapInvokerV2_CallerService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/ode/processes/Caller</Value>
+    </Setting>
+    <Setting Name="ConsoleClient_ProcessManagement_ProcessManagement" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/ode/processes/ProcessManagement.ProcessManagementPort/</Value>
+    </Setting>
+    <Setting Name="ConsoleClient_LengthyProcess_LengthyProcess" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080//LengthyProcess.LengthyProcessPort/</Value>
+    </Setting>
+    <Setting Name="ConsoleClient_TypicalMedicalProcess_SoapService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:28387/SoapService.svc</Value>
+    </Setting>
+    <Setting Name="ConsoleClient_TypicalMedicalProcess_TypicalMedicalProcessService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/ode/processes/TypicalMedicalProcess</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

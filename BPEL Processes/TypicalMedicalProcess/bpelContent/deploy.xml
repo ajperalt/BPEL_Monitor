@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy xmlns="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:TypicalMedicalProcess.com="http://TypicalMedicalProcess.com" xmlns:tempuri.org="http://tempuri.org/">
+  <process name="TypicalMedicalProcess.com:TypicalMedicalProcess">
+    <active>true</active>
+    <retired>false</retired>
+    <process-events generate="all"/>
+    <provide partnerLink="client">
+      <service name="TypicalMedicalProcess.com:TypicalMedicalProcessService" port="TypicalMedicalProcessPort"/>
+    </provide>
+    <invoke partnerLink="RemoteServicePL">
+      <service name="tempuri.org:SoapService" port="BasicHttpBinding_ISoapService"/>
+    </invoke>
+  </process>
+</deploy>

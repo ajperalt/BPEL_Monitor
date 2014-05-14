@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Diploma.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Diploma_SoapInvokerV2_SoapService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:28387/SoapService.svc</Value>
+    </Setting>
+    <Setting Name="Diploma_SoapInvokerV2_Caller" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/ode/processes/Caller.CallerPort/</Value>
+    </Setting>
+    <Setting Name="Diploma_LengthyProcess_LengthyProcessService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/ode/processes/LengthyProcess</Value>
+    </Setting>
+    <Setting Name="Diploma_InstanceManagement_InstanceManagement" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080//InstanceManagement.InstanceManagementPort/</Value>
+    </Setting>
+    <Setting Name="Diploma_ProcessManagement_ProcessManagement" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080//ProcessManagement.ProcessManagementPort/</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

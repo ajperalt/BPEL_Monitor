@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="http://TypicalMedicalProcess.com" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://tempuri.org/" name="TypicalMedicalProcess" targetNamespace="http://TypicalMedicalProcess.com" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <plnk:partnerLinkType name="RemoteServicePLT">
+    <plnk:role name="RemoteServiceProvider" portType="wsdl:ISoapService" />
+  </plnk:partnerLinkType>
+  <plnk:partnerLinkType name="TypicalMedicalProcess">
+    <plnk:role name="TypicalMedicalProcessProvider" portType="tns:TypicalMedicalProcess" />
+  </plnk:partnerLinkType>
+  <import namespace="http://tempuri.org/" location="SoapService.wsdl" />
+  <types>
+    <schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://TypicalMedicalProcess.com" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="TypicalMedicalProcessRequest">
+        <complexType>
+          <sequence>
+            <element name="input" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="TypicalMedicalProcessResponse">
+        <complexType>
+          <sequence>
+            <element name="result" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </types>
+  <message name="TypicalMedicalProcessRequestMessage">
+    <part name="payload" element="tns:TypicalMedicalProcessRequest" />
+  </message>
+  <message name="TypicalMedicalProcessResponseMessage">
+    <part name="payload" element="tns:TypicalMedicalProcessResponse" />
+  </message>
+  <portType name="TypicalMedicalProcess">
+    <operation name="process">
+      <input message="tns:TypicalMedicalProcessRequestMessage" />
+      <output message="tns:TypicalMedicalProcessResponseMessage" />
+    </operation>
+  </portType>
+  <binding name="TypicalMedicalProcessBinding" type="tns:TypicalMedicalProcess">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="process">
+      <soap:operation soapAction="http://TypicalMedicalProcess.com/process" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="TypicalMedicalProcessService">
+    <port name="TypicalMedicalProcessPort" binding="tns:TypicalMedicalProcessBinding">
+      <soap:address location="http://localhost:8080/ode/processes/TypicalMedicalProcess" />
+    </port>
+  </service>
+</definitions>

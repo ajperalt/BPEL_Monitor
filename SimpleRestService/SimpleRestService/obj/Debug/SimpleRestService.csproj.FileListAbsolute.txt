@@ -1,0 +1,6 @@
+C:\Users\Altynbek\Documents\Visual Studio 2013\Projects\Learning\c#\SimpleRestService\SimpleRestService\bin\SimpleRestService.dll.config
+C:\Users\Altynbek\Documents\Visual Studio 2013\Projects\Learning\c#\SimpleRestService\SimpleRestService\bin\SimpleRestService.dll
+C:\Users\Altynbek\Documents\Visual Studio 2013\Projects\Learning\c#\SimpleRestService\SimpleRestService\bin\SimpleRestService.pdb
+C:\Users\Altynbek\Documents\Visual Studio 2013\Projects\Learning\c#\SimpleRestService\SimpleRestService\obj\Debug\SimpleRestService.csprojResolveAssemblyReference.cache
+C:\Users\Altynbek\Documents\Visual Studio 2013\Projects\Learning\c#\SimpleRestService\SimpleRestService\obj\Debug\SimpleRestService.dll
+C:\Users\Altynbek\Documents\Visual Studio 2013\Projects\Learning\c#\SimpleRestService\SimpleRestService\obj\Debug\SimpleRestService.pdb
