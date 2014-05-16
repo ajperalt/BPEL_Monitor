@@ -13,20 +13,21 @@ namespace Diploma.Controllers
     public class InterpreterController : Controller
     {
         private ProcessDBContext _context = new ProcessDBContext();
-        private List<Process> _processList = new List<Process>();
+        private List<Process> _processList;
+        private List<Instance> _instanceList;
         //
         // GET: /Interpreter/
 
         public ActionResult Index()
         {
-            //InvokeServices();
+            _processList = new List<Process>();
 
             InstanceManagement.InstanceManagement iManager = new InstanceManagement.InstanceManagement();
             var instances = iManager.listAllInstances().ToList();
 
             ProcessManagement.ProcessManagement pManager = new ProcessManagement.ProcessManagement();
             var processes = pManager.listAllProcesses();
-            for(int i = 0; i < processes.Count(); i ++)
+            for (int i = 0; i < processes.Count(); i++)
             {
                 var process = new Process();
                 process.Id = i + 1;
@@ -40,8 +41,42 @@ namespace Diploma.Controllers
 
 
             return View(_processList);
-            //return "на страничке интерпретатора";
         }
+
+
+        public ActionResult Instances(string process = "TypicalMedicalProcess")
+        {
+            InstanceManagement.InstanceManagement iManager = new InstanceManagement.InstanceManagement();
+            var instances = iManager.listAllInstances().ToList().Where(ins => ins.processname.Name == process);
+
+            List<string> doctors = new List<string>();
+            doctors.Add("Иванова О.С. (терапевт)");
+            doctors.Add("Ефимова А.А (отоларинголог)");
+            doctors.Add("Потемкина А.В (окулист)");
+            doctors.Add("Стержнев Е.Б (хирург)");
+            doctors.Add("Стеблев А.М. (ревматолог)");
+
+            List<string> patients = new List<string>();
+            patients.Add("Александров В.А");
+            patients.Add("Иванов И.И.");
+            patients.Add("Лебедев О.М");
+            patients.Add("Любимов Г.М");
+            patients.Add("Веригин М.В.");
+
+            Random rand = new Random();
+            for (int i = 0; i < instances.Count(); i++)
+            {
+
+                Instance curInst = new Instance();
+                curInst.DoctorName = doctors.ElementAt(rand.Next(0, doctors.Count));
+                curInst.PatientName = patients.ElementAt(rand.Next(0, patients.Count));
+                curInst.Id = i + 1;
+                curInst.percentOfComplite = rand.Next(0, 10) * 10;
+                _instanceList.Add(curInst);
+            }
+            return View(_instanceList);
+        }
+
 
         private static void InvokeServices()
         {

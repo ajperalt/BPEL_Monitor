@@ -1,23 +1,35 @@
-﻿@model List<Diploma.Models.Process>
+﻿@model IEnumerable<Diploma.Models.Process>
+
 @{
-    ViewBag.Title = "Интерпретатор";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Index";
 }
-@{
-    var grid = new WebGrid(source: Model, rowsPerPage: 200,
-    canPage: false, canSort: true, defaultSort: "Name");
-}
-<p>
-    <h2>Список запущенных бизнес-процессов</h2>
-    <div id="grid">
-        @grid.GetHtml(
-                tableStyle: "grid",
-                headerStyle: "head",
-                alternatingRowStyle: "alt",
-                columns: grid.Columns(
-                grid.Column("Id", "№"),
-                grid.Column("Name", "Название процесса", canSort: true),
-                grid.Column("InstanceCount", "Количество экземпляров")
-            ))
-    </div>
-</p>
+
+<h2>Список протекающих процессов</h2>
+
+<table class="table table-hover">
+    <tr>
+        <th>
+            @Html.Label("№")
+        </th>
+        <th>
+            @Html.Label("Название процесса")
+        </th>
+        <th>
+            @Html.Label("Количество запущенных экземпляров")
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.ActionLink(item.Name, "Instancess")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstanceCount)
+            </td>
+        </tr>
+    }
+</table>

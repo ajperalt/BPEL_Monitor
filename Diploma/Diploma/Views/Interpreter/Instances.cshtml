@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Diploma.Models.Instance>
+
+@{
+    ViewBag.Title = "Instances";
+}
+
+<h2>Instances</h2>
+
+
+<table class="table table-hover">
+    <tr>
+        <th>
+            @Html.Label("№")
+        </th>
+        <th>
+            @Html.Label("Имя врача")
+        </th>
+        <th>
+            @Html.Label("Имя пациента")
+        </th>
+        <th>
+            @Html.Label("статус процесса")
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoctorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatientName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.percentOfComplite + " %")
+            </td>
+        </tr>
+    }
+</table>
