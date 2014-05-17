@@ -4,30 +4,30 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Список протекающих процессов</h2>
+<h1>Список протекающих процессов</h1>
 
 <table class="table table-hover">
     <tr>
-        <th>
+        <th class="tableHeaderFont">
             @Html.Label("№")
         </th>
-        <th>
+        <th class="tableHeaderFont">
             @Html.Label("Название процесса")
         </th>
-        <th>
+        <th class="tableHeaderFont">
             @Html.Label("Количество запущенных экземпляров")
         </th>
     </tr>
     @foreach (var item in Model)
     {
         <tr>
-            <td>
+            <td class="tableFont">
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
-            <td>
-                @Html.ActionLink(item.Name, "Instancess")
+            <td class="tableFont">
+                @Html.ActionLink(item.Name, "Instances")
             </td>
-            <td>
+            <td class="tableFont">
                 @Html.DisplayFor(modelItem => item.InstanceCount)
             </td>
         </tr>

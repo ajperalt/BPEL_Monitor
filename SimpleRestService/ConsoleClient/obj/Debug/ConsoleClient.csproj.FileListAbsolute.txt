@@ -4,3 +4,9 @@ C:\Users\Altynbek\Documents\Visual Studio 2013\Projects\Learning\c#\SimpleRestSe
 C:\Users\Altynbek\Documents\Visual Studio 2013\Projects\Learning\c#\SimpleRestService\ConsoleClient\obj\Debug\ConsoleClient.exe
 C:\Users\Altynbek\Documents\Visual Studio 2013\Projects\Learning\c#\SimpleRestService\ConsoleClient\obj\Debug\ConsoleClient.pdb
 C:\Users\Altynbek\Documents\Visual Studio 2013\Projects\Learning\c#\SimpleRestService\ConsoleClient\obj\Debug\ConsoleClient.csprojResolveAssemblyReference.cache
+D:\Диплом\BPEL_Monitor\SimpleRestService\ConsoleClient\bin\Debug\ConsoleClient.exe.config
+D:\Диплом\BPEL_Monitor\SimpleRestService\ConsoleClient\obj\Debug\ConsoleClient.exe
+D:\Диплом\BPEL_Monitor\SimpleRestService\ConsoleClient\obj\Debug\ConsoleClient.pdb
+D:\Диплом\BPEL_Monitor\SimpleRestService\ConsoleClient\bin\Debug\ConsoleClient.exe
+D:\Диплом\BPEL_Monitor\SimpleRestService\ConsoleClient\bin\Debug\ConsoleClient.pdb
+D:\Диплом\BPEL_Monitor\SimpleRestService\ConsoleClient\obj\Debug\ConsoleClient.csprojResolveAssemblyReference.cache

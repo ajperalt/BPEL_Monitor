@@ -40,6 +40,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -60,16 +61,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="RestService.svc" />
+    <Content Include="ServiceTools.svc" />
     <Content Include="SoapService.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IServiceTools.cs" />
     <Compile Include="ISoapService.cs" />
     <Compile Include="RestService.svc.cs">
       <DependentUpon>RestService.svc</DependentUpon>
     </Compile>
     <Compile Include="IRestService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceTools.svc.cs">
+      <DependentUpon>ServiceTools.svc</DependentUpon>
+    </Compile>
     <Compile Include="SoapService.svc.cs">
       <DependentUpon>SoapService.svc</DependentUpon>
     </Compile>

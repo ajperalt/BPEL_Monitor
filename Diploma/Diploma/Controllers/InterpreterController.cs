@@ -49,6 +49,10 @@ namespace Diploma.Controllers
             InstanceManagement.InstanceManagement iManager = new InstanceManagement.InstanceManagement();
             var instances = iManager.listAllInstances().ToList().Where(ins => ins.processname.Name == process);
 
+            _instanceList = new List<Instance>();
+
+            var generalInstCount = iManager.listAllInstances().ToList().Count;
+
             List<string> doctors = new List<string>();
             doctors.Add("Иванова О.С. (терапевт)");
             doctors.Add("Ефимова А.А (отоларинголог)");
@@ -64,15 +68,23 @@ namespace Diploma.Controllers
             patients.Add("Веригин М.В.");
 
             Random rand = new Random();
-            for (int i = 0; i < instances.Count(); i++)
+            int count = 0;
+            using (InstanceDBContext context = new InstanceDBContext())
             {
+                for (int i = 0; i < instances.Count(); i++)
+                {
 
-                Instance curInst = new Instance();
-                curInst.DoctorName = doctors.ElementAt(rand.Next(0, doctors.Count));
-                curInst.PatientName = patients.ElementAt(rand.Next(0, patients.Count));
-                curInst.Id = i + 1;
-                curInst.percentOfComplite = rand.Next(0, 10) * 10;
-                _instanceList.Add(curInst);
+                    Instance curInst = new Instance();
+                    curInst.DoctorName = doctors.ElementAt(rand.Next(0, doctors.Count));
+                    curInst.PatientName = patients.ElementAt(rand.Next(0, patients.Count));
+                    curInst.Id = i + 1;
+                    curInst.percentOfComplite = rand.Next(0, 10) * 10;
+                    _instanceList.Add(curInst);
+
+                    context.Instances.Add(curInst);
+                    context.SaveChanges();
+                }
+                count = context.Instances.Count();
             }
             return View(_instanceList);
         }

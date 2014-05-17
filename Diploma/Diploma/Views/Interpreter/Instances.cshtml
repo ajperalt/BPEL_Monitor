@@ -6,38 +6,39 @@
 
 <h2>Instances</h2>
 
-
-<table class="table table-hover">
-    <tr>
-        <th>
-            @Html.Label("№")
-        </th>
-        <th>
-            @Html.Label("Имя врача")
-        </th>
-        <th>
-            @Html.Label("Имя пациента")
-        </th>
-        <th>
-            @Html.Label("статус процесса")
-        </th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+<div class="table-responsive">
+    <table class="table table-hover">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DoctorName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PatientName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.percentOfComplite + " %")
-            </td>
+            <th class="tableHeaderFont">
+                @Html.Label("№")
+            </th>
+            <th class="tableHeaderFont">
+                @Html.Label("Имя врача")
+            </th>
+            <th class="tableHeaderFont">
+                @Html.Label("Имя пациента")
+            </th>
+            <th class="tableHeaderFont">
+                @Html.Label("статус процесса")
+            </th>
         </tr>
-    }
-</table>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="tableFont">
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td class="tableFont">
+                    @Html.DisplayFor(modelItem => item.DoctorName)
+                </td>
+                <td class="tableFont">
+                    @Html.DisplayFor(modelItem => item.PatientName)
+                </td>
+                <td class="tableFont">
+                    @Html.DisplayFor(modelItem => item.percentOfComplite)
+                </td>
+            </tr>
+        }
+    </table>
+</div>
